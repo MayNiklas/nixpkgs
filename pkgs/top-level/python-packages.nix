@@ -7257,6 +7257,8 @@ self: super: with self; {
 
   pika = callPackage ../development/python-modules/pika { };
 
+  tiktoken = callPackage ../development/python-modules/tiktoken { };
+
   pika-pool = callPackage ../development/python-modules/pika-pool { };
 
   pikepdf = callPackage ../development/python-modules/pikepdf { };
