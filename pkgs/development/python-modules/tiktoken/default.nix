@@ -41,9 +41,11 @@ buildPythonPackage rec {
   propagatedBuildInputs = [
     regex
     requests
-    setuptools-rust
-  ] ++ (with rustPlatform; [
+  ];
+
+  nativeBuildInputs = [ setuptools-rust ] ++ (with rustPlatform; [
     cargoSetupHook
+    maturinBuildHook
     rust.cargo
     rust.rustc
   ]);
@@ -53,7 +55,7 @@ buildPythonPackage rec {
   ];
 
   meta = with lib; {
-    description = "tiktoken is a fast BPE tokeniser for use with OpenAI's models.";
+    description = "a fast BPE tokeniser for use with OpenAI's models.";
     homepage = "https://github.com/openai/tiktoken";
     license = licenses.mit;
     maintainers = with maintainers; [ MayNiklas ];
