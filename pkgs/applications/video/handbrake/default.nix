@@ -252,8 +252,7 @@ let
     ]
     ++ optional (!useGtk) "--disable-gtk"
     ++ optional useFdk "--enable-fdk-aac"
-    ++ optional stdenv.isDarwin "--disable-xcode"
-    ++ optional stdenv.hostPlatform.isx86 "--harden";
+    ++ optional stdenv.isDarwin "--disable-xcode";
 
     # NOTE: 2018-12-27: Check NixOS HandBrake test if changing
     NIX_LDFLAGS = [ "-lx265" ];
