@@ -166,6 +166,10 @@ stdenv.mkDerivation rec {
     )
   '';
 
+  postInstall = ''
+    rm $out/LICENSE.txt
+  '';
+
   meta = with lib; {
     description = "PC Software for BambuLab's 3D printers";
     homepage = "https://github.com/bambulab/BambuStudio";
