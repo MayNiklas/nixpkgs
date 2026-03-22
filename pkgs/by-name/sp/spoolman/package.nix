@@ -25,7 +25,11 @@ python.pkgs.buildPythonPackage rec {
     python.pkgs.pythonRelaxDepsHook
   ];
 
-  pythonRelaxDeps = [ "setuptools" ];
+  pythonRelaxDeps = [
+    "hishel"
+    "setuptools"
+    "websockets"
+  ];
 
   postPatch = ''
     substituteInPlace pyproject.toml --replace-fail psycopg2-binary psycopg2
